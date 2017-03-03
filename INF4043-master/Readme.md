@@ -1,3 +1,0 @@
-# CECI EST LE MAUVAIS DOSSIER JE SUIS DESOLE QUIL EXISTE LE PROJET SE TROUVE DANS L'AUTRE
-
-Le bon est la : https://github.com/Pixon/INF4043/tree/master/Desktop/INF4043-master
