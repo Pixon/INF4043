@@ -102,7 +102,7 @@ public class Board {
 
 		System.out.println("Joueur " + (currentPlayer + 1));
 		
-		if (thereWasAWord=false ){
+		if (thereWasAWord==false ){
 		char lettre1 = LetterBag.getNextLetter();
 		char lettre2 = LetterBag.getNextLetter();
 		Pot.add(lettre1);
@@ -112,7 +112,7 @@ public class Board {
 			char lettre1 = LetterBag.getNextLetter();
 			Pot.add(lettre1);
 		}
-		boolean thereWasAWord=false;
+		thereWasAWord=false;
 		sc = new Scanner(System.in);
 		String letters = "";
 		for (int j = 0; j < Pot.size(); j++) {
@@ -137,7 +137,7 @@ public class Board {
 			sc = new Scanner(System.in);
 			System.out.println("Veuillez taper votre mot : ");
 			String inputWord = sc.nextLine();
-			System.out.println("Vous avez entré : " + inputWord);
+			System.out.println("Vous avez entrée : " + inputWord);
 
 			if (dictionary.isValidWord(inputWord)) {
 				char[] potChar = new char[Pot.size()];
@@ -157,6 +157,7 @@ public class Board {
 					}
 
 					System.out.println("Le mot est bon !!!!!!");
+					thereWasAWord=true;
 
 					players[currentPlayer].AddWord(inputWord);
 
@@ -164,7 +165,7 @@ public class Board {
 							+ " points");
 
 					if (players[currentPlayer].getPoints() >= 10) {
-						System.out.println("Le joueur " + (currentPlayer + 1) + " a gagné !");
+						System.out.println("Le joueur " + (currentPlayer + 1) + " a gagnée !");
 						System.exit(0);
 					}
 				} else {
@@ -193,13 +194,13 @@ public class Board {
 		}
 		str = dictionary.getWordsThatCanBeComposed(Tab);
 		if (str.length == 0) {
-			System.out.println("L'IA n'a trouvé aucun mot, à votre tour");
+			System.out.println("L'IA n'a trouvée aucun mot, à  votre tour");
 			currentPlayer = (currentPlayer + 1) % 2;
 		} else {
 			rand = random.nextInt(2);
 			if (rand ==1) {
 			
-			System.out.println("L'IA a trouvé : " + str[0]);
+			System.out.println("L'IA a trouvée : " + str[0]);
 			
 			String word;
 			word = str[0];
@@ -214,7 +215,7 @@ public class Board {
 						
 						
 						if (players[currentPlayer].getPoints() >= 10) {
-							System.out.println("l'IA a gagné !");
+							System.out.println("l'IA a gagnée !");
 							System.exit(0);
 							
 						}
