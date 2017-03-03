@@ -2,7 +2,7 @@
 
 Packages :
 
-Mon code est divissé en deux packages , le premier comportant les classes nécessaire au bon fonctionnement du Jeu (main , Board , letterBag...) et le second le Package test contenant les test unitaire permettant de vérifier le bon fonctionnement des méthodes de mes classes).
+Mon code est divisé en deux packages , le premier comportant les classes nécessaire au bon fonctionnement du Jeu (main , Board , letterBag...) et le second le Package test contenant mes classes de test dans lesquels sont mes  test unitaires permettant de vérifier le bon fonctionnement des méthodes de mes classes).
 
 Réponses aux questions SOLID/Design Pathern :
 
