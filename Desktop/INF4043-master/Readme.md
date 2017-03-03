@@ -13,9 +13,11 @@ cette classe montre le S du principe SOLID la responsabilité unique.
 En effet cette classe permet juste de generer de manière aléatoire un charactère correspondant a une des lettre de l'alphabet.
  (Une modification a été effectué afin d'obtenir plus de voyelle car elle sortaient très peu car ne sont que 6 contre 20 consonnes)
 
+Deuxieme principe SOLID : 
+Le O : Open/close Principe les classes sont ouvert a l'etension comme par exemple ma classe Player qui est éténdu a l'IA tout en restant fermé a la modification
 
-
-
+Design pattern : 
+Pour ma classe letterBag j'aurais pu utiliser le design pattern Singleton pour offrir la possibilité d'acceder a l'unique instance de letterBag depuis n'importe qu'elle autre classe. mais dans mon projet ça n'aurais pas eu grande utilité c'est pour çela que je ne l'ai pas utilisé.
 
 
 
