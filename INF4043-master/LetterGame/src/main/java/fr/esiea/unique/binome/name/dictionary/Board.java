@@ -1,10 +1,6 @@
 package fr.esiea.unique.binome.name.dictionary;
 
-import java.awt.Dimension;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Random;
@@ -194,13 +190,14 @@ public class Board {
 			String word;
 			word = str[0];
 			players[currentPlayer].AddWord(word);
+			System.out.println("L'IA  a " + players[currentPlayer].getPoints()
+					+ " points");
 			for (int k = 0; k < str[0].length(); k++) {
 				for (int l = 0; l < Pot.size(); l++) {
 					if (str[0].toCharArray()[k] == Pot.get(l)) {
 						Pot.remove(l);
 						
-						System.out.println("L'IA  a " + players[currentPlayer].getPoints()
-								+ " points");
+						
 						break;
 					}
 				}
