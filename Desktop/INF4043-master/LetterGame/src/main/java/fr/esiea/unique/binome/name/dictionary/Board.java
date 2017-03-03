@@ -1,10 +1,6 @@
 package fr.esiea.unique.binome.name.dictionary;
 
-import java.awt.Dimension;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Random;
@@ -16,7 +12,6 @@ public class Board {
 	Player players[] = new Player[2];
 	Dictionary dictionary;
 	int currentPlayer;
-	boolean thereWasAWord=false;
 
 	Board(Dictionary dictionary) {
 		this.dictionary = dictionary;
@@ -72,13 +67,13 @@ public class Board {
 			}
 		}
 		if (playerTemp[0].initLetter <= playerTemp[1].initLetter) {
-			players[0] = playerTemp[1];
-			players[1] = playerTemp[0];
+			players[0] = playerTemp[0];
+			players[1] = playerTemp[1];
 			System.out.println("Le joueur 1 commence");
 			currentPlayer = 0;
 		} else {
-			players[1] = playerTemp[1];
-			players[0] = playerTemp[0];
+			players[1] = playerTemp[0];
+			players[0] = playerTemp[1];
 			System.out.println("Le joueur 2 commence");
 			currentPlayer = 1;
 		}
@@ -101,18 +96,10 @@ public class Board {
 		Scanner sc;
 
 		System.out.println("Joueur " + (currentPlayer + 1));
-		
-		if (thereWasAWord==false ){
 		char lettre1 = LetterBag.getNextLetter();
 		char lettre2 = LetterBag.getNextLetter();
 		Pot.add(lettre1);
 		Pot.add(lettre2);
-		}
-		else {
-			char lettre1 = LetterBag.getNextLetter();
-			Pot.add(lettre1);
-		}
-		thereWasAWord=false;
 		sc = new Scanner(System.in);
 		String letters = "";
 		for (int j = 0; j < Pot.size(); j++) {
@@ -137,7 +124,7 @@ public class Board {
 			sc = new Scanner(System.in);
 			System.out.println("Veuillez taper votre mot : ");
 			String inputWord = sc.nextLine();
-			System.out.println("Vous avez entrée : " + inputWord);
+			System.out.println("Vous avez entré : " + inputWord);
 
 			if (dictionary.isValidWord(inputWord)) {
 				char[] potChar = new char[Pot.size()];
@@ -157,7 +144,6 @@ public class Board {
 					}
 
 					System.out.println("Le mot est bon !!!!!!");
-					thereWasAWord=true;
 
 					players[currentPlayer].AddWord(inputWord);
 
@@ -165,7 +151,7 @@ public class Board {
 							+ " points");
 
 					if (players[currentPlayer].getPoints() >= 10) {
-						System.out.println("Le joueur " + (currentPlayer + 1) + " a gagnée !");
+						System.out.println("Le joueur " + (currentPlayer + 1) + " a gagné !");
 						System.exit(0);
 					}
 				} else {
@@ -194,14 +180,13 @@ public class Board {
 		}
 		str = dictionary.getWordsThatCanBeComposed(Tab);
 		if (str.length == 0) {
-			System.out.println("L'IA n'a trouvée aucun mot, à  votre tour");
+			System.out.println("L'IA n'a trouvé aucun mot, à votre tour");
 			currentPlayer = (currentPlayer + 1) % 2;
 		} else {
 			rand = random.nextInt(2);
 			if (rand ==1) {
 			
-			System.out.println("L'IA a trouvée : " + str[0]);
-			
+			System.out.println("L'IA a trouvé : " + str[0]);
 			String word;
 			word = str[0];
 			players[currentPlayer].AddWord(word);
@@ -213,12 +198,6 @@ public class Board {
 						Pot.remove(l);
 						
 						
-						
-						if (players[currentPlayer].getPoints() >= 10) {
-							System.out.println("l'IA a gagnée !");
-							System.exit(0);
-							
-						}
 						break;
 					}
 				}
