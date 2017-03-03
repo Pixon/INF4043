@@ -1,3 +1,25 @@
+Je suis désolé qu'il y ai deux dossier je vais supprimer le contenu de l'autre celui-ci est le bon mais j'ai eu beaucoup de problème avec git et eclipse et une fois que j'ai réussis a me servir de Git sans eclipse le projet s'est dédoublé et impossible de le supprimer.
+
+
+
+
+Réponses aux questions SOLID/Design Pathern :
+
+Principe SOLID Classe exemple : 
+LetterBag
+
+cette classe montre le S du principe SOLID la responsabilité unique.
+En effet cette classe permet juste de generer de manière aléatoire un charactère correspondant a une des lettre de l'alphabet.
+ (Une modification a été effectué afin d'obtenir plus de voyelle car elle sortaient très peu car ne sont que 6 contre 20 consonnes)
+
+
+
+
+
+
+
+
+
 # TP Architecture Logicielle / Inf4043 - 2017 - Jeux de lettres
 
 - Date de rendu : 24/02/2017 23h - pas de retard accepté
