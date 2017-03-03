@@ -1,7 +1,8 @@
-Je suis désolé qu'il y ai deux dossier je vais supprimer le contenu de l'autre celui-ci est le bon mais j'ai eu beaucoup de problème avec git et eclipse et une fois que j'ai réussis a me servir de Git sans eclipse le projet s'est dédoublé et impossible de le supprimer.
 
 
+Packages :
 
+Mon code est divissé en deux packages , le premier comportant les classes nécessaire au bon fonctionnement du Jeu (main , Board , letterBag...) et le second le Package test contenant les test unitaire permettant de vérifier le bon fonctionnement des méthodes de mes classes).
 
 Réponses aux questions SOLID/Design Pathern :
 
