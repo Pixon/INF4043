@@ -16,7 +16,6 @@ public class Board {
 	Player players[] = new Player[2];
 	Dictionary dictionary;
 	int currentPlayer;
-	boolean thereWasAWord=false;
 
 	Board(Dictionary dictionary) {
 		this.dictionary = dictionary;
@@ -72,13 +71,13 @@ public class Board {
 			}
 		}
 		if (playerTemp[0].initLetter <= playerTemp[1].initLetter) {
-			players[0] = playerTemp[1];
-			players[1] = playerTemp[0];
+			players[0] = playerTemp[0];
+			players[1] = playerTemp[1];
 			System.out.println("Le joueur 1 commence");
 			currentPlayer = 0;
 		} else {
-			players[1] = playerTemp[1];
-			players[0] = playerTemp[0];
+			players[1] = playerTemp[0];
+			players[0] = playerTemp[1];
 			System.out.println("Le joueur 2 commence");
 			currentPlayer = 1;
 		}
@@ -101,18 +100,10 @@ public class Board {
 		Scanner sc;
 
 		System.out.println("Joueur " + (currentPlayer + 1));
-		
-		if (thereWasAWord=false ){
 		char lettre1 = LetterBag.getNextLetter();
 		char lettre2 = LetterBag.getNextLetter();
 		Pot.add(lettre1);
 		Pot.add(lettre2);
-		}
-		else {
-			char lettre1 = LetterBag.getNextLetter();
-			Pot.add(lettre1);
-		}
-		boolean thereWasAWord=false;
 		sc = new Scanner(System.in);
 		String letters = "";
 		for (int j = 0; j < Pot.size(); j++) {
@@ -200,24 +191,16 @@ public class Board {
 			if (rand ==1) {
 			
 			System.out.println("L'IA a trouvé : " + str[0]);
-			
 			String word;
 			word = str[0];
 			players[currentPlayer].AddWord(word);
-			System.out.println("L'IA  a " + players[currentPlayer].getPoints()
-					+ " points");
 			for (int k = 0; k < str[0].length(); k++) {
 				for (int l = 0; l < Pot.size(); l++) {
 					if (str[0].toCharArray()[k] == Pot.get(l)) {
 						Pot.remove(l);
 						
-						
-						
-						if (players[currentPlayer].getPoints() >= 10) {
-							System.out.println("l'IA a gagné !");
-							System.exit(0);
-							
-						}
+						System.out.println("L'IA  a " + players[currentPlayer].getPoints()
+								+ " points");
 						break;
 					}
 				}

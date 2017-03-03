@@ -7,14 +7,14 @@ import java.util.Arrays;
 
 public class Dictionary
 {
-	public String[] wordsList;
+	private String[] wordsList;
 
-	public Dictionary() //dictionnaire de secour en cas de chargement du premier
+	public Dictionary()
 	{
 		wordsList = new String[5];
-		wordsList[0] = "goéland";
-		wordsList[1] = "élève";
-		wordsList[2] = "à";
+		wordsList[0] = "pierre";
+		wordsList[1] = "feuille";
+		wordsList[2] = "ciseau";
 		wordsList[3] = "boite";
 		wordsList[4] = "prout";
 	}

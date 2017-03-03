@@ -3,8 +3,6 @@ package fr.esiea.unique.binome.name.dictionary;
 import org.junit.Before;
 import org.junit.Test;
 
-import fr.esiea.unique.binome.name.dictionary.IDictionary;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 

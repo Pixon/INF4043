@@ -9,7 +9,7 @@ public class LetterBag {
 		private static int rand;
 		private static char voy;
 		
-		public static char getNextLetter() {
+		static char getNextLetter() {
 			count =random.nextInt(3);
 			
 			if (count==1){
